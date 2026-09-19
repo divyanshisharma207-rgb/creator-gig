@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creatorly — The Creator Gig Marketplace</title>
+  <meta name="description" content="Creatorly is the marketplace where young creators monetize their skills and clients book them. Find designers, musicians, videographers, writers, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#marketplace" class="nav-logo" id="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Creatorly</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#marketplace" class="nav-link" data-page="marketplace" id="nav-marketplace">Explore</a>
+        <a href="#post-gig" class="nav-link" data-page="post-gig" id="nav-post-gig">Post a Gig</a>
+        <a href="#creator-dashboard" class="nav-link" data-page="creator-dashboard" id="nav-creator-dashboard">
+          Dashboard
+          <span class="badge" id="dashboard-badge" style="display:none"></span>
+        </a>
+        <a href="#my-bookings" class="nav-link" data-page="my-bookings" id="nav-my-bookings">My Bookings</a>
+      </div>
+
+      <div class="nav-right">
+        <div class="role-switcher" id="role-switcher">
+          <button class="role-btn active" id="role-client" onclick="App.setRole('client')">Client</button>
+          <button class="role-btn" id="role-creator" onclick="App.setRole('creator')">Creator</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="app-root"></main>
+
+  <!-- MODALS -->
+  <div id="modal-overlay" class="modal-overlay" style="display:none" onclick="App.closeModal()">
+    <div class="modal-box" id="modal-box" onclick="event.stopPropagation()">
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- CONFETTI CANVAS -->
+  <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none;"></canvas>
+
+  <script src="app.js"></script>
+</body>
+</html>
